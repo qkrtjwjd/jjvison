@@ -13,7 +13,7 @@ python AdafruitDHT.py 11 4
 "
 
 ### JAVA INstall
-...
+'''
 
 ## 1.리포지토리의 GSP 키를 더하기
 ...
