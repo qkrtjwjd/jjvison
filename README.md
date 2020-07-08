@@ -57,4 +57,20 @@ sudo apt update
 sudo apt install grafana
 ...
 
-## 4. 
+## 4. 프로그램 실행
+...
+
+sudo service grafana-server start
+...
+
+## influxdb import with python
+...
+
+sudo pip install influxdb
+...
+
+## gpio pin map
+...
+
+cd/tmp
+
