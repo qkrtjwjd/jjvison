@@ -66,6 +66,7 @@ sudo service grafana-server start
 ## influxdb import with python
 ...
 
+
 sudo pip install influxdb
 ...
 
@@ -74,3 +75,6 @@ sudo pip install influxdb
 
 cd/tmp
 
+wget https://project-downloads.drogon.net/wiringpi-latest.deb
+sudo dpkg -i wiringpi-latest.deb
+...
