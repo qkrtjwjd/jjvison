@@ -77,4 +77,6 @@ cd/tmp
 wget https://project-downloads.drogon.net/wiringpi-latest.deb
 sudo dpkg -i wiringpi-latest.deb
 
-
+## github use
+ - Repository down load
+git clone https://github.com/qkrtjwjd<user name>/jjvison<repository name>
