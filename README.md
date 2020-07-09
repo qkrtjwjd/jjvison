@@ -80,3 +80,36 @@ sudo dpkg -i wiringpi-latest.deb
 ## github use
  - Repository down load
 git clone https://github.com/qkrtjwjd<user name>/jjvison<repository name>
+ 
+##  vim설정하기
+set nu(번호)
+set cindent(c언어)
+set ts=4(띄어쓰기를 4개 한것)
+if has("syntax")(syntax on 색깔)
+syntax on
+endif
+set bg=dark
+set expandtab
+let python_version_2 =1
+let python_highlight_al1 =1
+filetype indent plugin on
+
+## 움직임 감지
+ 1 #!/user/bin/python
+  2
+  3 import time
+  4 import RPI_GPIO as GPIO
+  5
+  6 print GPIO.VERSION
+  7 GPIO.setmode(GPIO.BCM)
+  8 GPIO.setup(4, GPIO_IN)
+  9
+ 10 def interrupt_fired(channel):
+ 11     print("inerrupt Fired")
+ 12     print(channel)
+ 13
+ 14 GPIO.add_event_detect(4,GPIO.FALLING, callback=interrupt_fired)
+ 15
+ 16 while(True):
+ 17     time.sleep(1)
+ 18     print("timer fired")
