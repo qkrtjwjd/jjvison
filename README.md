@@ -161,4 +161,8 @@ git commit -m pirsoftware
  35         if client is not None:
  36             try:
  37                 client.write_points(data)
-                                                
+ 38             except Exception as e:
+ 39                 print "Exception write "+str(e)
+ 40             finally:
+ 41                 client.close()
+ 42                 print("running influxdb OK")
