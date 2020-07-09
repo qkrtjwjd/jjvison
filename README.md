@@ -113,3 +113,12 @@ filetype indent plugin on
  16 while(True):
  17     time.sleep(1)
  18     print("timer fired")
+
+cd jjvison
+ls
+cp/ home/pi/work
+cp/ home/pi/work/pir.py .
+ls
+add .
+git add .
+git commit -m pirsoftware
