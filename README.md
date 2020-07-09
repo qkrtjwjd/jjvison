@@ -122,3 +122,43 @@ ls
 add .
 git add .
 git commit -m pirsoftware
+
+
+ 1 #!/user/bin/python
+  2
+  3 import time
+  4 import RPi.GPIO as GPIO
+  5 import requests, json
+  6 from influxdb import InfluxDBClient as influxdb
+  7
+  8 GPIO.setmode(GPIO.BCM)
+  9 GPIO.setup(4, GPIO.IN)
+ 10
+ 11 def interrupt_fired(channel):
+ 12     print("inerrupt Fired")
+ 13     a=5
+ 14     print(a)
+ 15
+ 16 GPIO.add_event_detect(4,GPIO.FALLING, callback=interrupt_fired)
+ 17
+ 18 while(True):
+ 19     time.sleep(1)
+ 20     a=1
+ 21     data = [{
+ 22         'measurement':'pir',
+ 23         'tags':{
+ 24             'VisionUni':'2410',
+ 25             },
+ 26         'fields':{
+ 27             'pir':a,
+ 28             }
+ 29         }]
+ 30     client = None
+ 31     try:
+ 32         client = influxdb('localhost',8086,'root','pir')
+ 33     except Exeption as e:
+ 34         print "Exception"+str(e)
+ 35         if client is not None:
+ 36             try:
+ 37                 client.write_points(data)
+                                                
